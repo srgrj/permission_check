@@ -2,7 +2,7 @@
 A simple, cross-platform, lightweight utility to check permission of files and folders in Python.
 
 ## Usage
-1. `pip install permission_check`
+1. `pip install permission-check`
 2. `from permission_check.permission_check import PermissionCheck`
 3. `file = PermissionCheck(path="path_to_your_file")` (A `FileNotFoundError` will occur if the path is not an existing file or folder on the file system)
 ### For checking Owner Permissions

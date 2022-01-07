@@ -1,5 +1,5 @@
 import os
-from .utils import Permission
+from permission_check.utils import Permission
 
 
 class PermissionCheck:

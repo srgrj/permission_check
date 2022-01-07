@@ -1,34 +1,34 @@
 import unittest
 import os
-from ..permission_check import PermissionCheck
-from ..utils import Permission
+from permission_check.permission_check import PermissionCheck
+from permission_check.utils import Permission
 
 
 class TestFileLoading(unittest.TestCase):
 
     def test_valid_file_load(self):
         self.assertRaises(AssertionError, self.assertRaises, FileNotFoundError, PermissionCheck,
-                          os.path.join(os.getcwd(), "__init__.py"))
+                          os.path.join(os.getcwd(), "setup.py"))
 
     def test_invalid_file_load(self):
-        self.assertRaises(FileNotFoundError, PermissionCheck, "__init_.py")
+        self.assertRaises(FileNotFoundError, PermissionCheck, "setup1.py")
 
     def test_valid_folder_load(self):
         self.assertRaises(AssertionError, self.assertRaises, FileNotFoundError, PermissionCheck,
-                          os.path.join(os.getcwd(), "utils"))
+                          os.path.join(os.getcwd(), "permission_check"))
 
     def test_invalid_folder_load(self):
-        self.assertRaises(FileNotFoundError, PermissionCheck, "util")
+        self.assertRaises(FileNotFoundError, PermissionCheck, "permission_check1")
 
 
 class TestFilePermissions(unittest.TestCase):
-    file = PermissionCheck(os.path.join(os.getcwd(), "__init__.py"))
+    file = PermissionCheck(os.path.join(os.getcwd(), "setup.py"))
 
     def test_valid_file(self):
         self.assertRegex(TestFilePermissions.file.permissions, r"^\d{3}$")
 
     def test_valid_folder(self):
-        folder = PermissionCheck(os.path.join(os.getcwd(), "utils"))
+        folder = PermissionCheck(os.path.join(os.getcwd(), "permission_check"))
         self.assertRegex(folder.permissions, r"^\d{3}$")
 
     def test_owner_permission(self):
