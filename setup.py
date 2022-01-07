@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="permission_check",
-    version="0.0.1",
+    version="0.0.2",
     author="Somesh Garje",
     author_email="someshgarje@gmail.com",
     description="A simple, cross-platform, lightweight utility to check permission of files and folders in Python.",
