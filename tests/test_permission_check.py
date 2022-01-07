@@ -1,7 +1,7 @@
 import unittest
 import os
-from permission_check import PermissionCheck
-from utils import Permission
+from ..permission_check import PermissionCheck
+from ..utils import Permission
 
 
 class TestFileLoading(unittest.TestCase):
