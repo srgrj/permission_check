@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="Permission Check",
+    name="permission_check",
     version="0.0.1",
     author="Somesh Garje",
     author_email="someshgarje@gmail.com",
